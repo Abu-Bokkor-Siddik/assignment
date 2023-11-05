@@ -15,11 +15,28 @@ const Create = () => {
     const mark = e.target.mark.value
     const description = e.target.description.value
     const thumbnail = e.target.thumbnail.value
-    const data = e.target.data.value
+    const data1 = e.target.data.value
     const email = e.target.email.value
     const image = e.target.image.value
     const selectdata = e.target.cars.value
- console.log(titles,mark,description,thumbnail,data,selectdata,email,image)
+ console.log(titles,mark,description,thumbnail,data1,selectdata,email,image)
+ const assData ={titles,mark,description,thumbnail,data1,email,image,selectdata,name:user?.displayName}
+
+ console.log(assData)
+ fetch("http://localhost:3000/ass",{
+ method:'POST',
+ headers:{
+  'content-type':'application/json'
+ },
+ body:JSON.stringify(assData)
+ })
+ .then(result => result.json())
+ .then(data =>{
+  if(data.acknowledged){
+    return alert('added successfully')
+  }
+  console.log(data)
+ })
   }
   return (
     <div>
