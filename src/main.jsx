@@ -17,6 +17,8 @@ import Register from './page/Register.jsx';
 import AuthPro from './components/AuthPro.jsx';
 import Submited from './page/Submited.jsx';
 import Privet from './components/Privet.jsx';
+import Update from './components/Update.jsx';
+import View from './components/View.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +55,16 @@ const router = createBrowserRouter([
       {
         path:'/submited',
         element:<Privet><Submited></Submited></Privet>
+      },
+      {
+        path:'/update/:id',
+        element:<Update></Update>,
+        loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
+      },
+      {
+        path:'/view/:id',
+        element:<View></View>,
+        loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
       },
     ]
 
