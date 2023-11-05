@@ -1,13 +1,33 @@
-import React from 'react'
+import { useContext, useState } from 'react'
+import { Contexs } from '../components/AuthPro'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 const Create = () => {
+
+  const {user}=useContext(Contexs)
+  const [startDate, setStartDate] = useState(new Date());
+  const [selectd,setselectd]=useState('')
+  const createdata =(e)=>{
+    e.preventDefault()
+    const titles = e.target.title.value
+    const mark = e.target.mark.value
+    const description = e.target.description.value
+    const thumbnail = e.target.thumbnail.value
+    const data = e.target.data.value
+    const email = e.target.email.value
+    const image = e.target.image.value
+    const selectdata = e.target.cars.value
+ console.log(titles,mark,description,thumbnail,data,selectdata,email,image)
+  }
   return (
     <div>
     <div className="hero min-h-screen bg-base-200">
     <div className="hero-content flex-col ">
       
       <div className="card flex-shrink-0  shadow-2xl bg-red-400 w-auto ">
-        <form className="card-body ">
+        <form onSubmit={createdata} className="card-body ">
         <p className='text-center text-3xl'>Create Assignment</p>
 
         <div className='grid grid-cols-2 w-auto gap-6 '>
@@ -33,19 +53,25 @@ const Create = () => {
             <label className="label">
               <span className="label-text">Thumbnail</span>
             </label>
-            <input name='thumbnail' type="email" placeholder="thumbnail" className="input input-bordered" required />
+            <input name='thumbnail' type="text" placeholder="thumbnail" className="input input-bordered" required />
           </div>
           <div className="form-control">
-            <label className="label">
-              <span className="label-text">Select</span>
-            </label>
-            <input name='image' type="text" placeholder="Image URL" className="input input-bordered" required />
+          <label  className='h-auto' >Select One</label>
+          <select name="cars" id="cars">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+            
+          </select>
+            
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Date</span>
             </label>
-            <input name='date' type="text" placeholder="Date" className="input input-bordered" required />
+
+            <DatePicker name='data' selected={startDate} onChange={(date) => setStartDate(date)} />
+            
             
           </div>
 
@@ -58,6 +84,13 @@ const Create = () => {
               <span className="label-text">Image</span>
             </label>
             <input name='image' type="text" placeholder="Image" className="input input-bordered" required />
+
+
+
+          <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input defaultValue={user?.email} name='email' type="text" placeholder="Image" className="input input-bordered" required readOnly />
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
