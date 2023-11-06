@@ -55,7 +55,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/submited',
-        element:<Privet><Submited></Submited></Privet>
+        element:<Privet><Submited></Submited></Privet>,
+        loader:()=>fetch('http://localhost:3000/submits?stutas=pending')
       },
       {
         path:'/update/:id',

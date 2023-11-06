@@ -4,9 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom'
 const View = () => {
     const data = useLoaderData()
     console.log(data)
-    const adddata =()=>{
-      
-    }
+    
   return (
     <div>
      <div><div  className="card w-96 bg-base-100 shadow-xl">
@@ -18,7 +16,7 @@ const View = () => {
          <Link  to={`/dynamic/${data._id}`}><button   className="btn btn-primary">Take Assignment</button></Link>
        </div>
      </div>
-   </div>)</div>
+   </div></div>
     </div>
   )
 }
