@@ -34,16 +34,16 @@ const router = createBrowserRouter([
       },
       {
         path:'/create',
-        element:<Create></Create>
+        element:<Privet><Create></Create></Privet>
       },
       {
         path:'/all',
-        element:<All></All>,
+        element:<privet><All></All></privet>,
         loader: ()=> fetch('http://localhost:3000/my')
       },
       {
         path:'/my',
-        element:<My></My>
+        element:<privet><My></My></privet>
       },
 
 
@@ -62,22 +62,22 @@ const router = createBrowserRouter([
       },
       {
         path:'/update/:id',
-        element:<Update></Update>,
+        element:<privet><Update></Update></privet>,
         loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
       },
       {
         path:'/view/:id',
-        element:<View></View>,
+        element:<privet><View></View></privet>,
         loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
       },
       {
         path:'/dynamic/:id',
-        element:<Dynamic></Dynamic>,
+        element:<privet><Dynamic></Dynamic></privet>,
         loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
       },
       {
         path:'/mark/:id',
-        element:<Mark></Mark>,
+        element:<privet><Mark></Mark></privet>,
         loader: ({params})=> fetch(`http://localhost:3000/submits/${params.id}`)
       },
     ]

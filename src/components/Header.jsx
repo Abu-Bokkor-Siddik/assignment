@@ -37,20 +37,30 @@ const Header = () => {
 
           <div className='flex gap-3 justify-center items-center  '>
           <NavLink className='' to='/'>Home</NavLink>
-          <NavLink to='/create'>Create </NavLink>
-          <NavLink to='/all'>All Assignments  </NavLink>
-          <NavLink to='/submited'> Submitted assignment </NavLink>
-          <NavLink to='/my'>My assignment  </NavLink>
+          {user?
+          <NavLink to='/create'>Create </NavLink> :''}
+
+         {user? <NavLink to='/all'>All Assignments  </NavLink> :''}
+         {user?<NavLink to='/submited'> Submitted assignment </NavLink> :''}
+         {user? <NavLink to='/my'>My assignment  </NavLink> :''}
+
+
+          
+         
+          
           </div>
           {/** user name and profile would be here  */}
-          <div className='flex justify-center items-center '>
-          <div className='mx-4'>name:{user?.displayName}</div>
+          <div className='flex justify-center items-center  '>
+          {user?<div className='mx-4  '>name:{user?.displayName}</div>:''}
 
-          <div className="avatar">
-            <div className="w-16 rounded-full">
+          {
+            user?<div className="avatar">
+            <div className="w-16 rounded-full ">
             <img src={user?.photoURL} />
             </div>
-                </div>
+                </div>:''
+          }
+          
 
                {
                 user?<button onClick={logOut} className='btn btn-accent'>logOut</button>: <NavLink to='/login'><button className='btn btn-accent ml-3'>login</button></NavLink>

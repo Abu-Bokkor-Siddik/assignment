@@ -6,7 +6,7 @@ const Submited = () => {
   console.log(data)
   return (
     <div>
-      <h1>submited{data.length}</h1>
+     
       <div className='grid grid-cols-2 max-w-[1200px] mx-auto gap-6 pl-40'>
       {
         data?.map(item => <div key={item._id}  className="card w-96 bg-base-100 shadow-xl">
