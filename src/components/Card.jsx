@@ -4,7 +4,8 @@
 const Card = () => {
   return (
     <div>
-    <div className="hero lg:w-[1200px] mx-auto  bg-base-200">
+    <p className="text-center text-4xl my-10">Frequently Asks Question</p>
+    <div className="hero lg:w-[1200px] mx-auto  bg-base-100">
   <div className="hero-content flex-col lg:flex-row">
     <img src="https://i.ibb.co/cJVhdY7/faq-full-form.png" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
