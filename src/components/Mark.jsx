@@ -6,6 +6,25 @@ const Mark = () => {
     console.log(data)
     const marksubmit =(e)=>{
         e.preventDefault()
+        const note =e.target.note.value 
+        const mark =e.target.mark.value 
+        const textarea =e.target.textarea.value 
+        const stutas = 'complete'
+        const updatemark = {note,mark,textarea,stutas}
+        console.log(updatemark)
+
+        fetch(`http://localhost:3000/submits/${data._id}`,{
+        method:'PUT',
+        headers:{
+        'content-type':'application/json'
+            },
+            body:JSON.stringify(updatemark)
+            })
+            .then(result => result.json())
+        .then(datass =>{
+         console.log(datass)
+         })
+
     }
 
     
@@ -28,19 +47,19 @@ const Mark = () => {
           <label className="label">
               <span className="label-text">Note</span>
             </label>
-            <input name='pdf' defaultValue={data.textarea}  type="text" placeholder="Pdf url" className="input input-bordered" readOnly />
+            <input name='note' defaultValue={data.textarea}  type="text" placeholder="Pdf url" className="input input-bordered"  />
 
           <label className="label">
               <span className="label-text">Mark</span>
             </label>
-            <input name='pdf'  type="text" placeholder="mark" className="input input-bordered"  />
+            <input name='mark'  type="text" placeholder="mark" className="input input-bordered"  />
 
 
 
           <label className="label">
               <span className="label-text">Feedback</span>
             </label>
-            <textarea name='textarea' className="textarea textarea-secondary" placeholder="write some note here"></textarea>
+            <textarea  name='textarea' className="textarea textarea-secondary" placeholder="write some note here"></textarea>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Submit</button>
           </div>
