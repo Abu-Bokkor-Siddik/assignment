@@ -15,7 +15,7 @@ const Submited = () => {
           <h2 className="card-title">Shoes!</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-center">
-            <Link  to={`/dynamic/${data._id}`}><button   className="btn btn-primary">Take Assignment</button></Link>
+            <Link  to={`/mark/${item._id}`}><button   className="btn btn-primary">Mark</button></Link>
           </div>
         </div>
       </div>)

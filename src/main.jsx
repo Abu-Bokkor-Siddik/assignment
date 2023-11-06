@@ -20,6 +20,7 @@ import Privet from './components/Privet.jsx';
 import Update from './components/Update.jsx';
 import View from './components/View.jsx';
 import Dynamic from './components/Dynamic.jsx';
+import Mark from './components/Mark.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -72,6 +73,11 @@ const router = createBrowserRouter([
         path:'/dynamic/:id',
         element:<Dynamic></Dynamic>,
         loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
+      },
+      {
+        path:'/mark/:id',
+        element:<Mark></Mark>,
+        loader: ({params})=> fetch(`http://localhost:3000/submits/${params.id}`)
       },
     ]
 
