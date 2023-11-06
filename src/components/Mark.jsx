@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 
 const Mark = () => {
     const data = useLoaderData()
+    
     console.log(data)
+    console.log(data?.url)
+    
     const marksubmit =(e)=>{
         e.preventDefault()
         const note =e.target.note.value 
@@ -64,9 +67,15 @@ const Mark = () => {
             <button className="btn btn-primary">Submit</button>
           </div>
         </form>
+
+        
       </div>
     </div>
   </div>
+
+ 
+  
+  
     </div>
   )
 }

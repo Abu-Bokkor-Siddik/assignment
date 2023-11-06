@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/KGkjMS4/istockphoto-1098407382-612x612.jpg",
+      "title": "Time management"
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/0n5TTWN/download-7.jpg",
+      "title": "Assignment  management"
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/V9354ZL/download-4.png",
+      "title": "Feedback"
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/WfXDstH/kmc-fixingsearch-W.jpg",
+      "title": "Search and filter"
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/pwqZ9QR/download-8.jpg",
+      "title": "Discussion"
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/yncQK2d/download-9.jpg",
+      "title": "Chat and message"
+    }
+  ]
+  
