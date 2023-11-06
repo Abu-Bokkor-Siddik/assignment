@@ -12,8 +12,9 @@ const Submited = () => {
         data?.map(item => <div key={item._id}  className="card w-96 bg-base-100 shadow-xl">
         <figure><img src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card-title">{item.titles}</h2>
+          <p>Submited by :{item.userDetails}</p>
+          <p>Mark:{item.mark}</p>
           <div className="card-actions justify-center">
             <Link  to={`/mark/${item._id}`}><button   className="btn btn-primary">Mark</button></Link>
           </div>

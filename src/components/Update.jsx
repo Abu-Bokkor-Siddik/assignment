@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { useContext } from 'react';
 import { Contexs } from './AuthPro';
+import Swal from 'sweetalert2'
 
 const Update = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -36,7 +37,11 @@ const Update = () => {
  .then(result => result.json())
  .then(datass =>{
     if(datass.modifiedCount>0){
-       return alert('updated succsefully')
+       return Swal.fire({
+        title: "Good job!",
+        text: "Update successfully ",
+        icon: "success"
+      });
     }
     console.log(datass)
  })

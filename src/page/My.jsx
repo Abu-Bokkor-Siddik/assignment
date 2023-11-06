@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { Contexs } from '../components/AuthPro'
+import Swal from 'sweetalert2'
 
 const My = () => {
   const {user}=useContext(Contexs)
@@ -24,7 +25,11 @@ const My = () => {
     .then(data => {
       console.log(data)
       if(data.deletedCount>0){
-        alert('delete successfully')
+        Swal.fire({
+          title: "Good job!",
+          text: "Delete successfully ",
+          icon: "success"
+        });
         const remaining = datas.filter(data => data._id !==id);
         setdatas(remaining)
       }

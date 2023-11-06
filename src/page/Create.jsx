@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { Contexs } from '../components/AuthPro'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from 'sweetalert2'
 
 
 const Create = () => {
@@ -33,7 +34,11 @@ const Create = () => {
  .then(result => result.json())
  .then(data =>{
   if(data.acknowledged){
-    return alert('added successfully')
+    return Swal.fire({
+      title: "Good job!",
+      text: "Added successfully ",
+      icon: "success"
+    });
   }
   console.log(data)
  })

@@ -51,8 +51,9 @@ console.log("here in my select..",selectdata)
         data2?.map(item =><div key={item._id} className="card w-96 bg-base-100 shadow-xl">
         <figure><img src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card-title">{item.titles}</h2>
+          <p>Mark : {item.mark}</p>
+          <p>{item.selectdata}</p>
           <div className="card-actions justify-between">
           <Link to={`/view/${item._id}`}><button className='btn btn-accent'>view</button></Link>
             <Link to={`/update/${item._id}`}><button   className="btn btn-primary">Update</button></Link>

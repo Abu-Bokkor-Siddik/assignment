@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { Contexs } from './AuthPro'
+import Swal from 'sweetalert2'
 
 const Dynamic = () => {
   const data =useLoaderData()
@@ -26,7 +27,11 @@ const Dynamic = () => {
  .then(data =>{
   console.log(data)
   if(data.acknowledged){
-    return alert('added successfully')
+    return Swal.fire({
+      title: "Good job!",
+      text: "Added successfully ",
+      icon: "success"
+    });
   }
  
  })
