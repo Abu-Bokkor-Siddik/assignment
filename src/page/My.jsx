@@ -37,6 +37,7 @@ const My = () => {
 
   }
   return (
+    <div>
     <div className='grid grid-cols-2 max-w-[1200px] bg-white mx-auto justify-around items-center gap-6 lg:pl-40 lg:my-10 '>
       {
         datas.map(item=> <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
@@ -51,6 +52,9 @@ const My = () => {
         </div>
       </div>)
       }
+    </div>
+
+    
     </div>
   )
 }

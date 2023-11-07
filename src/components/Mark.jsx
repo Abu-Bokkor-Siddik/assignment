@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import Pdf from './Pdf'
 
 const Mark = () => {
     const data = useLoaderData()
@@ -33,7 +34,7 @@ const Mark = () => {
     
   return (
     <div>
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-[600px] bg-base-200">
     <div className="hero-content flex-col ">
       
       <div className="card flex-shrink-0  shadow-2xl bg-red-400 w-auto ">
@@ -73,7 +74,8 @@ const Mark = () => {
     </div>
   </div>
 
- 
+  {/**test  */}
+  <Pdf></Pdf>
   
   
     </div>

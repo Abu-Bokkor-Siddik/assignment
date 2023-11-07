@@ -1,5 +1,10 @@
 import { useState } from "react"
+import { Worker } from '@react-pdf-viewer/core';
+// Import the main component
+import { Viewer } from '@react-pdf-viewer/core';
 
+// Import the styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 const Pdf = () => {
     const [pdfFile,setpdfFile]=useState(null)
@@ -8,7 +13,7 @@ const Pdf = () => {
     const handle=(e)=>{
         e.preventDefault()
         const selectPdf = e.target.files[0]
-        // console.log(selectPdf)
+        console.log('here pdf',selectPdf)
         if(selectPdf){
             if(selectPdf&&allowfiles.includes(selectPdf.type)){
                 let render =new FileReader();
@@ -28,9 +33,9 @@ const Pdf = () => {
 
     }
   return (
-    <div>
+    <div className="max-w-[1000px] mx-auto">
     <form >
-    <label ><p>pdf</p></label>
+    <label ><p> Previews pdf</p></label>
     <input onChange={handle} type="file" name="" id="" />
     {pdfFileE&& <span>{pdfFileE}</span>}
     </form>
@@ -38,7 +43,10 @@ const Pdf = () => {
  <h1>view</h1>
     <div className="h-[600px]">
     {pdfFile&&(
-        <p>pdf fil will here</p>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        <Viewer fileUrl={pdfFile}></Viewer>
+        
+        </Worker>
     )}
     </div>
       

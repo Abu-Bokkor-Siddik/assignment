@@ -30,8 +30,7 @@ const Home = () => {
     <Card></Card>
 
 
-    {/**test  */}
-    
+   
      
     </div>
   )
