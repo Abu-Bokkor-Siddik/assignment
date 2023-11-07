@@ -21,6 +21,7 @@ import Update from './components/Update.jsx';
 import View from './components/View.jsx';
 import Dynamic from './components/Dynamic.jsx';
 import Mark from './components/Mark.jsx';
+import Result from './components/Result.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       {
         path:'/submited',
         element:<Privet><Submited></Submited></Privet>,
-        loader:()=>fetch('http://localhost:3000/submits?stutas=pending')
+        // loader:()=>fetch('http://localhost:3000/submits?stutas=pending')
       },
       {
         path:'/update/:id',
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
         path:'/mark/:id',
         element:<Privet><Mark></Mark></Privet>,
         loader: ({params})=> fetch(`http://localhost:3000/submits/${params.id}`)
+      },
+      {
+        path:'/result',
+        element:<Privet><Result></Result></Privet>
       },
     ]
 

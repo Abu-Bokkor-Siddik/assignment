@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { Contexs } from '../components/AuthPro'
 import Swal from 'sweetalert2'
+import axios from 'axios'
 
 const My = () => {
   const {user}=useContext(Contexs)
@@ -9,10 +10,21 @@ const My = () => {
   console.log(user)
   const url = `http://localhost:3000/my?email=${user?.email}`
   
+  // ,{withCredentials: true }
+  
   useEffect(()=>{
-    fetch(url)
-    .then(result => result.json())
-    .then(data => setdatas(data))
+
+    axios.get(url)
+    .then(data => {
+      setdatas(data.data)
+    })
+
+
+    // fetch(url)
+    // .then(result => result.json())
+    // .then(data => setdatas(data))
+
+
   },[url])
   console.log(datas)
   const handledelete =(id)=>{

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import Pdf from './Pdf'
+import Swal from 'sweetalert2'
 
 const Mark = () => {
     const data = useLoaderData()
@@ -26,6 +27,14 @@ const Mark = () => {
             })
             .then(result => result.json())
         .then(datass =>{
+
+          if(datass.acknowledged){
+            return Swal.fire({
+              title: "Good job!",
+              text: "successfully ",
+              icon: "success"
+            });
+          }
          console.log(datass)
          })
 

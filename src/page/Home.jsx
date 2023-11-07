@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+
 import Bennar from '../components/Bennar'
 import Card from '../components/Card'
 import { useLoaderData } from 'react-router-dom'

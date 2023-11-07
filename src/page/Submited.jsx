@@ -1,9 +1,20 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 
 const Submited = () => {
-  const data = useLoaderData()
-  console.log(data)
+  // const data = useLoaderData()
+  // console.log(data)
+  const [data,setdata]=useState([])
+
+// {withCredentials:true}
+  useEffect(()=>{
+    axios.get('http://localhost:3000/submits?stutas=pending'
+)
+.then(data=>{
+    setdata(data.data)
+})
+},[])
   return (
     <div>
      

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
+import  { useEffect, useState } from 'react'
+import { Link} from 'react-router-dom'
 
 const All = () => {
 const [selectdata,setselectdata]=useState('')
@@ -14,7 +14,7 @@ console.log("here in my select..",selectdata)
   const [data,setdata]=useState([])
   const [data2,setdata2]=useState(data)
   const [count,setcount]=useState(null)
-  const[currentpage,setcurrentpage]=useState(1)
+  const[currentpage,setcurrentpage]=useState(0)
   const perpage = 4;
   const numberp = Math.ceil(count/perpage)
   console.log(numberp)
@@ -34,7 +34,7 @@ console.log("here in my select..",selectdata)
   
   console.log('data',data,'data2',data2)
 
-  const url = `http://localhost:3000/my?selectdata=${selectdata}`
+  const url = `http://localhost:3000/my?selectdata=${selectdata}&page=${currentpage}`
   useEffect(()=>{
     fetch(url)
     .then(result => result.json())
@@ -52,12 +52,21 @@ console.log("here in my select..",selectdata)
 
   
 
+  // testing all data get 
+
+  useEffect(()=>{
+    fetch('http://localhost:3000/my')
+    .then(result => result.json())
+    .then(data => setdata(data))
+
+  },[])
+
   // testing
 
   useEffect(()=>{
     fetch(`http://localhost:3000/my?page=${currentpage}`)
     .then(result => result.json())
-    .then(data => setdata(data))
+    .then(data => setdata2(data))
 
   },[currentpage])
  
@@ -82,14 +91,14 @@ console.log("here in my select..",selectdata)
           </select>
     
     </div>
-    <div className='max-w-[1200px] grid grid-cols-2 gap-7 pl-40 mx-auto  my-44'>
+    <div className='max-w-[1200px] grid grid-cols-2 gap-7 pl-40 mx-auto  my-6'>
 
    
 
 
       {
         data2?.map(item =><div key={item._id} className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src={item.thumbnail} alt="Shoes" /></figure>
+        <figure><img className='w-full h-[300px]'  src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item.titles}</h2>
           <p>Mark : {item.mark}</p>
@@ -102,15 +111,15 @@ console.log("here in my select..",selectdata)
       </div>)
       }
     </div>
-    <div>
+    <div className='text-center  my-16'>
     <p>current page {currentpage}</p>
-    <button onClick={handelprevi}>prev</button>
+    <button className='btn btn-neutral' onClick={handelprevi}>prev</button>
     {
-      pages.map((page,index )=><button
-      onClick={()=>setcurrentpage(index+1)}
+      pages.map((page ,index)=><button className='btn btn-neutral mx-3'
+      onClick={()=>setcurrentpage(page)}
       key={page}>{index+1}</button>)
     }
-    <button onClick={handelnext}>next</button>
+    <button className='btn btn-neutral' onClick={handelnext}>next</button>
     </div>
     </div>
   )

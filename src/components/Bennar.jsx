@@ -3,12 +3,12 @@ import React from 'react'
 const Bennar = () => {
   return (
     <div>
-    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)'}}>
+    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/XLFKjYm/lovepik-overhead-view-of-young-people-in-study-group-image-352041216.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 className="mb-5 text-5xl font-bold">Hello Friends</h1>
+      <p className="mb-5">Online group study typically refers to a collaborative learning approach where individuals, often students, come together over the internet to study and learn together. This can be done through various online platforms, video conferencing tools, or specialized study groups on educational websites or social media. In online group study, participants share resources, discuss topics, solve problems, and help each other understand the subject matter.</p>
       <button className="btn btn-primary">Get Started</button>
     </div>
   </div>

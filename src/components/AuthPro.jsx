@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import auth from './firebase';
+import axios from "axios";
 
 
 
@@ -50,8 +51,22 @@ const AuthPro = ({children}) => {
     // onauthState 
     useEffect(()=>{
         const subricribe = onAuthStateChanged(auth, (currect) => {
+            const logeruser = {email:currect?.email}
             setuser(currect)
             setloading(false)
+            console.log('user ',logeruser)
+            if(currect){
+               
+                axios.post('http://localhost:3000/jwt1',logeruser,{withCredentials:true})
+                .then(res => {
+                  console.log(res.data)})
+            }else{
+                axios.post('http://localhost:3000/logout',logeruser,{withCredentials:true})
+        
+                .then(res => {
+                  console.log(res.data)})
+              
+               }
         })
         return ()=>{
             subricribe()

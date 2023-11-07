@@ -18,7 +18,7 @@ const Header = () => {
     <div className="w-full navbar bg-base-300">
 
     {/**navbar 1200px */}
-    <div className=' w-full max-w-[1200px] mx-auto '>
+    <div className=' w-full max-w-[1400px] mx-auto '>
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -27,7 +27,7 @@ const Header = () => {
       <div className="flex-1 px-2 mx-2">
             <div className='flex justify-center items-center gap-3'><img className='h-16 w-16 rounded-full' src="https://i.ibb.co/J32nPng/bb221ff6bcbb3537f0c791923b899b07.jpg" alt="" />
             
-            <p>Online Group-Study</p>
+            <p className='text-2xl font-bold'>Online Group-Study</p>
             </div>
             
       </div>
@@ -36,13 +36,14 @@ const Header = () => {
           {/* Navbar menu content here */}
 
           <div className='flex gap-3 justify-center items-center  '>
-          <NavLink className='' to='/'>Home</NavLink>
+          <NavLink className='text-xl font-semibold' to='/'>Home</NavLink>
           {user?
-          <NavLink to='/create'>Create </NavLink> :''}
+          <NavLink  className='text-xl font-semibold' to='/create'>Create </NavLink> :''}
 
-         {user? <NavLink to='/all'>All Assignments  </NavLink> :''}
-         {user?<NavLink to='/submited'> Submitted assignment </NavLink> :''}
-         {user? <NavLink to='/my'>My assignment  </NavLink> :''}
+         {user? <NavLink  className='text-xl font-semibold' to='/all'>All Assignments  </NavLink> :''}
+         {user?<NavLink  className='text-xl font-semibold' to='/submited'> Submitted assignment </NavLink> :''}
+         {user? <NavLink  className='text-xl font-semibold' to='/my'>My assignment  </NavLink> :''}
+         {user? <NavLink  className='text-xl font-semibold' to='/result'>Result</NavLink> :''}
 
 
           
@@ -50,7 +51,7 @@ const Header = () => {
           
           </div>
           {/** user name and profile would be here  */}
-          <div className='flex justify-center items-center  '>
+          <div className='flex justify-center items-center text-xl font-semibold '>
           {user?<div className='mx-4  '>name:{user?.displayName}</div>:''}
 
           {
@@ -63,7 +64,7 @@ const Header = () => {
           
 
                {
-                user?<button onClick={logOut} className='btn btn-accent'>logOut</button>: <NavLink to='/login'><button className='btn btn-accent ml-3'>login</button></NavLink>
+                user?<button onClick={logOut} className='btn btn-accent mx-3'>logOut</button>: <NavLink to='/login'><button className='btn btn-accent ml-3'>login</button></NavLink>
                }
           
           </div>
