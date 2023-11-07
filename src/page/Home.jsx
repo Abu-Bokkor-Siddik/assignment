@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react'
 import Bennar from '../components/Bennar'
 import Card from '../components/Card'
 import { useLoaderData } from 'react-router-dom'
-import Pdf from '../components/Pdf'
+
 
 const Home = () => {
   const data = useLoaderData()
