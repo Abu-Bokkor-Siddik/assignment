@@ -8,9 +8,31 @@ console.log("here in my select..",selectdata)
 // const [datas,setdatas]=useState([])
 
 
-  const data = useLoaderData()
+  // const data = useLoaderData()
 
+
+  const [data,setdata]=useState([])
   const [data2,setdata2]=useState(data)
+  const [count,setcount]=useState(null)
+  const[currentpage,setcurrentpage]=useState(1)
+  const perpage = 4;
+  const numberp = Math.ceil(count/perpage)
+  console.log(numberp)
+  const pages = [...Array(numberp).keys()];
+  console.log(pages)
+  const handelprevi=()=>{
+    if(currentpage>0){
+      setcurrentpage(currentpage-1)
+    }
+  }
+  const handelnext=()=>{
+
+    if(currentpage<pages.length){
+      setcurrentpage(currentpage+1)
+    }
+  }
+  
+  console.log('data',data,'data2',data2)
 
   const url = `http://localhost:3000/my?selectdata=${selectdata}`
   useEffect(()=>{
@@ -19,9 +41,27 @@ console.log("here in my select..",selectdata)
     .then(data => setdata2(data))
   },[url])
 
+// count ass
 
+  useEffect(()=>{
+    fetch('http://localhost:3000/myc')
+    .then(result => result.json())
+    .then(data => setcount(data.count))
 
+  },[])
+
+  
+
+  // testing
+
+  useEffect(()=>{
+    fetch(`http://localhost:3000/my?page=${currentpage}`)
+    .then(result => result.json())
+    .then(data => setdata(data))
+
+  },[currentpage])
  
+ console.log(count)
   const selects = (e)=>{
     const values = e.target.value
     setselectdata(values)
@@ -61,6 +101,16 @@ console.log("here in my select..",selectdata)
         </div>
       </div>)
       }
+    </div>
+    <div>
+    <p>current page {currentpage}</p>
+    <button onClick={handelprevi}>prev</button>
+    {
+      pages.map((page,index )=><button
+      onClick={()=>setcurrentpage(index+1)}
+      key={page}>{index+1}</button>)
+    }
+    <button onClick={handelnext}>next</button>
     </div>
     </div>
   )
