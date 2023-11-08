@@ -27,7 +27,7 @@ const Update = () => {
 
 
 
- fetch(`http://localhost:3000/my/${data._id}`,{
+ fetch(`https://assignment-pink-eight.vercel.app/my/${data._id}`,{
  method:'PUT',
  headers:{
   'content-type':'application/json'

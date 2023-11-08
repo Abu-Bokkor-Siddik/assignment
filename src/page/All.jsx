@@ -1,11 +1,15 @@
-import  { useEffect, useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import { Link} from 'react-router-dom'
+import { Contexs } from '../components/AuthPro'
 
 const All = () => {
 const [selectdata,setselectdata]=useState('')
 
 console.log("here in my select..",selectdata)
 // const [datas,setdatas]=useState([])
+
+const {lodings,setloadings}=useContext(Contexs)
+
 
 
   // const data = useLoaderData()
@@ -32,9 +36,11 @@ console.log("here in my select..",selectdata)
     }
   }
   
-  console.log('data',data,'data2',data2)
+  
 
-  const url = `http://localhost:3000/my?selectdata=${selectdata}&page=${currentpage}`
+  
+
+  const url = `https://assignment-pink-eight.vercel.app/my?selectdata=${selectdata}&page=${currentpage}`
   useEffect(()=>{
     fetch(url)
     .then(result => result.json())
@@ -44,7 +50,7 @@ console.log("here in my select..",selectdata)
 // count ass
 
   useEffect(()=>{
-    fetch('http://localhost:3000/myc')
+    fetch('https://assignment-pink-eight.vercel.app/myc')
     .then(result => result.json())
     .then(data => setcount(data.count))
 
@@ -55,16 +61,17 @@ console.log("here in my select..",selectdata)
   // testing all data get 
 
   useEffect(()=>{
-    fetch('http://localhost:3000/my')
+   setloadings(true)
+    fetch('https://assignment-pink-eight.vercel.app/my')
     .then(result => result.json())
     .then(data => setdata(data))
-
-  },[])
+     setloadings(false)
+  },[setloadings])
 
   // testing
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/my?page=${currentpage}`)
+    fetch(`https://assignment-pink-eight.vercel.app/my?page=${currentpage}`)
     .then(result => result.json())
     .then(data => setdata2(data))
 
@@ -76,10 +83,13 @@ console.log("here in my select..",selectdata)
     setselectdata(values)
   
   }
+  if(lodings){
+    return( <div><img className='flex justify-center lg:max-w-[1200px] mx-auto' src="https://i.ibb.co/qmMJFf4/c7e1b7b5753737039e1bdbda578132b8.gif" alt="" /></div>)
+  }
   return (
     <div>
-
-    <div className='w-52 max-w-[1200px] mx-auto my-28'>
+    <p className='text-center text-4xl font-semibold'>All Assignments</p>
+    <div className='w-52 max-w-[1200px] mx-auto my-16'>
     <label  className='h-auto ' >Select One</label>
           <select onChange={selects} name="cars" id="cars">
           <option value="None">None</option>
@@ -91,13 +101,13 @@ console.log("here in my select..",selectdata)
           </select>
     
     </div>
-    <div className='max-w-[1200px] grid grid-cols-2 gap-7 pl-40 mx-auto  my-6'>
+    <div className='max-w-[1200px] grid md:grid-cols-2  grid-cols-1 lg:grid-cols-2 gap-7 lg:pl-40 mx-5 lg:mx-auto lg:my-6'>
 
    
 
 
       {
-        data2?.map(item =><div key={item._id} className="card w-96 bg-base-100 shadow-xl">
+        data2?.map(item =><div key={item._id} className="card lg:w-96 bg-base-100 md:w-auto shadow-xl">
         <figure><img className='w-full h-[300px]'  src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item.titles}</h2>

@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 const Error = () => {
   return (
     <div>
-      <h1>error</h1>
-      <Link to='/'><button>go home</button></Link>
+    <div><img src="https://i.ibb.co/SXgRRZr/1-De-Bkx8vjbump-CO-Zk-PE9-Cw.png" alt="" /></div>
+     
+      <Link to='/'><button className='btn text-center  btn-error mx-auto flex items-center'>Click here </button></Link>
     </div>
   )
 }

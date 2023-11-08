@@ -8,7 +8,7 @@ const My = () => {
   const {user}=useContext(Contexs)
   const [datas,setdatas]=useState([])
   console.log(user)
-  const url = `http://localhost:3000/my?email=${user?.email}`
+  const url = `https://assignment-pink-eight.vercel.app/my?email=${user?.email}`
   
   // ,{withCredentials: true }
   
@@ -29,7 +29,7 @@ const My = () => {
   console.log(datas)
   const handledelete =(id)=>{
     console.log(id)
-    fetch(`http://localhost:3000/my/${id}`,{
+    fetch(`https://assignment-pink-eight.vercel.app/my/${id}`,{
       method:'DELETE'
 
     })
@@ -50,10 +50,11 @@ const My = () => {
   }
   return (
     <div>
-    <div className='grid grid-cols-2 max-w-[1200px] bg-white mx-auto justify-around items-center gap-6 lg:pl-40 lg:my-10 '>
+    <h1 className='text-center text-4xl font-semibold lg:my-6' >My assignment</h1>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1200px] bg-white mx-auto justify-around items-center gap-6 lg:pl-40 lg:my-10 md:my-9 '>
       {
-        datas.map(item=> <div key={item._id} className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src={item.thumbnail} alt="Shoes" /></figure>
+        datas.map(item=> <div key={item._id} className="card lg:w-96 bg-base-100 md:w-auto shadow-xl">
+        <figure><img className='w-full h-[300px]' src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item.titles}</h2>
           <p>{item.description}</p>

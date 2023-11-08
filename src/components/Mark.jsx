@@ -18,7 +18,7 @@ const Mark = () => {
         const updatemark = {note,mark,textarea,stutas}
         console.log(updatemark)
 
-        fetch(`http://localhost:3000/submits/${data._id}`,{
+        fetch(`https://assignment-pink-eight.vercel.app/submits/${data._id}`,{
         method:'PUT',
         headers:{
         'content-type':'application/json'

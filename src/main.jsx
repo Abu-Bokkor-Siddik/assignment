@@ -40,11 +40,11 @@ const router = createBrowserRouter([
       {
         path:'/all',
         element:<Privet><All></All></Privet>,
-        // loader: ()=> fetch('http://localhost:3000/my')
+        // loader: ()=> fetch('https://assignment-pink-eight.vercel.app/my')
       },
       {
         path:'/my',
-        element:<Privet><My></My></Privet>
+        element:<My></My>
       },
 
 
@@ -59,27 +59,27 @@ const router = createBrowserRouter([
       {
         path:'/submited',
         element:<Privet><Submited></Submited></Privet>,
-        // loader:()=>fetch('http://localhost:3000/submits?stutas=pending')
+        // loader:()=>fetch('https://assignment-pink-eight.vercel.app/submits?stutas=pending')
       },
       {
         path:'/update/:id',
         element:<Privet><Update></Update></Privet>,
-        loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
+        loader: ({params})=>fetch(`https://assignment-pink-eight.vercel.app/my/${params.id}`)
       },
       {
         path:'/view/:id',
         element:<Privet><View></View></Privet>,
-        loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
+        loader: ({params})=>fetch(`https://assignment-pink-eight.vercel.app/my/${params.id}`)
       },
       {
         path:'/dynamic/:id',
         element:<Privet><Dynamic></Dynamic></Privet>,
-        loader: ({params})=>fetch(`http://localhost:3000/my/${params.id}`)
+        loader: ({params})=>fetch(`https://assignment-pink-eight.vercel.app/my/${params.id}`)
       },
       {
         path:'/mark/:id',
         element:<Privet><Mark></Mark></Privet>,
-        loader: ({params})=> fetch(`http://localhost:3000/submits/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-pink-eight.vercel.app/submits/${params.id}`)
       },
       {
         path:'/result',

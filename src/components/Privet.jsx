@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Privet = ({children}) => {
     const {user,loading}=useContext(Contexs)
     if(loading){
-        return <span className="loading loading-dots loading-lg"></span>
+        return <div><img className='flex justify-center lg:max-w-[1200px] mx-auto' src="https://i.ibb.co/qmMJFf4/c7e1b7b5753737039e1bdbda578132b8.gif" alt="" /></div>
     }
     if(user){
         return children

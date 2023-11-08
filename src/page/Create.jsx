@@ -24,7 +24,7 @@ const Create = () => {
  const assData ={titles,mark,description,thumbnail,data1,email,image,selectdata,name:user?.displayName}
 
  console.log(assData)
- fetch("http://localhost:3000/ass",{
+ fetch("https://assignment-pink-eight.vercel.app/ass",{
  method:'POST',
  headers:{
   'content-type':'application/json'

@@ -9,7 +9,7 @@ const Submited = () => {
 
 // {withCredentials:true}
   useEffect(()=>{
-    axios.get('http://localhost:3000/submits?stutas=pending'
+    axios.get('https://assignment-pink-eight.vercel.app/submits?stutas=pending'
 )
 .then(data=>{
     setdata(data.data)
@@ -17,11 +17,12 @@ const Submited = () => {
 },[])
   return (
     <div>
+    <h1 className='text-center text-4xl font-semibold lg:my-6' >Submitted assignment</h1>
      
-      <div className='grid grid-cols-2 max-w-[1200px] mx-auto gap-6 pl-40'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1200px] mx-auto gap-6 my-10 lg:pl-40'>
       {
-        data?.map(item => <div key={item._id}  className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src={item.thumbnail} alt="Shoes" /></figure>
+        data?.map(item => <div key={item._id}  className="card lg:w-96 bg-base-100 md:w-auto shadow-xl">
+        <figure><img className='w-full h-[300px]' src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item.titles}</h2>
           <p>Submited by :{item.userDetails}</p>

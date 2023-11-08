@@ -9,8 +9,11 @@ import axios from "axios";
 export const Contexs = createContext(null)
 
 const AuthPro = ({children}) => {
+    // for privet loading
     const [loading,setloading]=useState(true)
     const [user,setuser]=useState(null)
+    // for data loading
+    const [lodings,setloadings]=useState(false)
 
 
     // google
@@ -57,11 +60,11 @@ const AuthPro = ({children}) => {
             console.log('user ',logeruser)
             if(currect){
                
-                axios.post('http://localhost:3000/jwt1',logeruser,{withCredentials:true})
+                axios.post('https://assignment-pink-eight.vercel.app/jwt1',logeruser,{withCredentials:true})
                 .then(res => {
                   console.log(res.data)})
             }else{
-                axios.post('http://localhost:3000/logout',logeruser,{withCredentials:true})
+                axios.post('https://assignment-pink-eight.vercel.app/logout',logeruser,{withCredentials:true})
         
                 .then(res => {
                   console.log(res.data)})
@@ -72,7 +75,7 @@ const AuthPro = ({children}) => {
             subricribe()
         }
     },[])
-    const info = {google,register,user,logout,logins,profile,loading}
+    const info = {google,register,user,logout,logins,profile,loading,setloading,lodings,setloadings}
 
   return (
     <Contexs.Provider value={info}>

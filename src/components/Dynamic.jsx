@@ -16,7 +16,7 @@ const Dynamic = () => {
     const stutas ='pending'
     const submitedD={url,textarea,data1,description,email,image,mark,name,selectdata,thumbnail,titles,userDetails,stutas}
     console.log(submitedD,)
-    fetch("http://localhost:3000/submits",{
+    fetch("https://assignment-pink-eight.vercel.app/submits",{
     method:'POST',
     headers:{
       'content-type':'application/json'
