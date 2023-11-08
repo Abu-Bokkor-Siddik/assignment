@@ -1,6 +1,6 @@
-import  { useContext, useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { Link} from 'react-router-dom'
-import { Contexs } from '../components/AuthPro'
+
 
 const All = () => {
 const [selectdata,setselectdata]=useState('')

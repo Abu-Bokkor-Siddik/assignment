@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Contexs } from '../components/AuthPro'
 import { Link, useNavigate } from 'react-router-dom'
 

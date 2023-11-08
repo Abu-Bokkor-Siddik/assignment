@@ -1,16 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+
 
 
 const Result = () => {
-    // https://assignment-pink-eight.vercel.app/submits?stutas=complete
-
-
-    // axios.get(url,{withCredentials: true })
-    // .then(data => {
-    //   setdatas(data.data)
-    // {withCredentials:true}
+  
 
     const [data,setdata]=useState([])
     console.log(data)

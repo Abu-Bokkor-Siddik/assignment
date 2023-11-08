@@ -9,7 +9,7 @@ const Create = () => {
 
   const {user}=useContext(Contexs)
   const [startDate, setStartDate] = useState(new Date());
-  const [selectd,setselectd]=useState('')
+  // const [selectd,setselectd]=useState('')
   const createdata =(e)=>{
     e.preventDefault()
     const titles = e.target.title.value
