@@ -6,6 +6,7 @@ const Submited = () => {
   // const data = useLoaderData()
   // console.log(data)
   const [data,setdata]=useState([])
+  console.log(data)
 
 // {withCredentials:true}
   useEffect(()=>{
@@ -25,7 +26,7 @@ const Submited = () => {
         <figure><img className='w-full h-[300px]' src={item.thumbnail} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item.titles}</h2>
-          <p>Submited by :{item.userDetails}</p>
+          <p>Name :{item.name}</p>
           <p>Mark:{item.mark}</p>
           <div className="card-actions justify-center">
             <Link  to={`/mark/${item._id}`}><button   className="btn btn-primary">Mark</button></Link>
