@@ -8,9 +8,9 @@ const [selectdata,setselectdata]=useState('')
 console.log("here in my select..",selectdata)
 // const [datas,setdatas]=useState([])
 
-const {lodings,setloadings}=useContext(Contexs)
+// const {lodings,setloadings}=useContext(Contexs)
 
-
+const [loading,setloading]=useState(true)
 
   // const data = useLoaderData()
 
@@ -61,12 +61,15 @@ const {lodings,setloadings}=useContext(Contexs)
   // testing all data get 
 
   useEffect(()=>{
-   setloadings(true)
+  
     fetch('https://assignment-pink-eight.vercel.app/my')
     .then(result => result.json())
-    .then(data => setdata(data))
-     setloadings(false)
-  },[setloadings])
+    .then(data =>{
+       setdata(data)
+       setloading(false)
+      })
+     
+  },[])
 
   // testing
 
@@ -83,9 +86,7 @@ const {lodings,setloadings}=useContext(Contexs)
     setselectdata(values)
   
   }
-  if(lodings){
-    return( <div><img className='flex justify-center lg:max-w-[1200px] mx-auto' src="https://i.ibb.co/qmMJFf4/c7e1b7b5753737039e1bdbda578132b8.gif" alt="" /></div>)
-  }
+ 
   return (
     <div>
     <p className='text-center text-4xl font-semibold'>All Assignments</p>
@@ -101,6 +102,12 @@ const {lodings,setloadings}=useContext(Contexs)
           </select>
     
     </div>
+
+    {/**set loading */}
+
+    {
+      loading? <div><img className='flex justify-center lg:max-w-[1200px] mx-auto' src="https://i.ibb.co/qmMJFf4/c7e1b7b5753737039e1bdbda578132b8.gif" alt="" /></div>:""
+    }
     <div className='max-w-[1200px] grid md:grid-cols-2  grid-cols-1 lg:grid-cols-2 gap-7 lg:pl-40 mx-5 lg:mx-auto lg:my-6'>
 
    
@@ -122,10 +129,10 @@ const {lodings,setloadings}=useContext(Contexs)
       }
     </div>
     <div className='text-center  my-16'>
-    <p>current page {currentpage}</p>
+    <p className='my-3'>current page {currentpage}</p>
     <button className='btn btn-neutral' onClick={handelprevi}>prev</button>
     {
-      pages.map((page ,index)=><button className='btn btn-neutral mx-3'
+      pages?.map((page ,index)=><button className='btn btn-neutral mx-3'
       onClick={()=>setcurrentpage(page)}
       key={page}>{index+1}</button>)
     }

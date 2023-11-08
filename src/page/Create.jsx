@@ -48,7 +48,7 @@ const Create = () => {
     <div className="hero min-h-screen bg-base-200">
     <div className="hero-content flex-col ">
       
-      <div className="card flex-shrink-0  shadow-2xl bg-red-400 w-auto ">
+      <div className="card flex-shrink-0  shadow-2xl bg-slate-100 w-auto ">
         <form onSubmit={createdata} className="card-body ">
         <p className='text-center text-3xl'>Create Assignment</p>
 
@@ -114,7 +114,7 @@ const Create = () => {
             </label>
             <input defaultValue={user?.email} name='email' type="text" placeholder="Image" className="input input-bordered" required readOnly />
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary">Add</button>
           </div>
         </form>
       </div>

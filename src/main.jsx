@@ -39,12 +39,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/all',
-        element:<Privet><All></All></Privet>,
+        element:<All></All>
         // loader: ()=> fetch('https://assignment-pink-eight.vercel.app/my')
       },
       {
         path:'/my',
-        element:<My></My>
+        element:<Privet><My></My></Privet>
       },
 
 

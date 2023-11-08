@@ -52,7 +52,7 @@ const Update = () => {
     <div className="hero min-h-screen bg-base-200">
     <div className="hero-content flex-col ">
       
-      <div className="card flex-shrink-0  shadow-2xl bg-red-400 w-auto ">
+      <div className="card flex-shrink-0  shadow-2xl bg-slate-100 w-auto ">
         <form onSubmit={createdatas} className="card-body ">
         <p className='text-center text-3xl'>Update Assignment</p>
 

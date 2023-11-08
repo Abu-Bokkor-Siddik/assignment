@@ -16,7 +16,7 @@ const Submited = () => {
 })
 },[])
   return (
-    <div>
+    <div className='min-h-[800px]'>
     <h1 className='text-center text-4xl font-semibold lg:my-6' >Submitted assignment</h1>
      
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-[1200px] mx-auto gap-6 my-10 lg:pl-40'>

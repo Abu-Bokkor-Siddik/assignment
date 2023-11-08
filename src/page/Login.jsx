@@ -52,7 +52,7 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
-      <button onClick={googlelog} className='btn btn-primary'>google korbo</button>
+      <button onClick={googlelog} className='btn btn-primary mx-8'>google</button>
     </div>
   </div>
 </div>
