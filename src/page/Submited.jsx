@@ -28,6 +28,7 @@ const Submited = () => {
           <h2 className="card-title">{item.titles}</h2>
           <p>Name :{item.name}</p>
           <p>Mark:{item.mark}</p>
+          <p>Submit:{item.userDetails}</p>
           <div className="card-actions justify-center">
             <Link  to={`/mark/${item._id}`}><button   className="btn btn-primary">Mark</button></Link>
           </div>
