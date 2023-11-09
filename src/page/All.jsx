@@ -31,7 +31,7 @@ const [loading,setloading]=useState(true)
   }
   const handelnext=()=>{
 
-    if(currentpage<pages.length){
+    if(currentpage<pages.length-1){
       setcurrentpage(currentpage+1)
     }
   }
@@ -129,7 +129,7 @@ const [loading,setloading]=useState(true)
       }
     </div>
     <div className='text-center  my-16'>
-    <p className='my-3'>current page {currentpage}</p>
+    
     <button className='btn btn-neutral' onClick={handelprevi}>prev</button>
     {
       pages?.map((page ,index)=><button className='btn btn-neutral mx-3'

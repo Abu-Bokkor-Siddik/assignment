@@ -22,6 +22,7 @@ import View from './components/View.jsx';
 import Dynamic from './components/Dynamic.jsx';
 import Mark from './components/Mark.jsx';
 import Result from './components/Result.jsx';
+import Extra from './components/Extra.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
       {
         path:'/result',
         element:<Privet><Result></Result></Privet>
+      },
+      {
+        path:'/extra',
+        element:<Extra></Extra>
       },
     ]
 
