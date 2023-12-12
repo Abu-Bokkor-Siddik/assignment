@@ -15,7 +15,7 @@ const Home = () => {
     
     <div className='max-w-[1200px] mx-auto mt-10'>
     <p className='text-center text-4xl '>Feature</p>
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] mx-auto gap-20 py-20 my-7'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] mx-auto gap-20 py-20 my-3'>
     {
       data?.map(item => <div key={item.id} className="card card-compact h-[300px] w-[400px] mx-auto md:w-auto lg:w-auto bg-base-100 shadow-xl">
       <figure><img className='w-full h-[200px]' src={item.img} alt="Shoes" /></figure>
